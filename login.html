@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VikashEsh Rascals Inc.</title>
+    <link rel="stylesheet" href="summa.css">
+  </head>
+    <body class="align">
+      <div class="grid">
+        <p style="font-size: 2rem;">Login page</p>
+        <form name="imp" action="base.html" method="GET" class="form login"  onsubmit="return validateForm()">
+          <div class="form__field">
+            <span class="hidden">Mail</span></label
+            >
+            <input
+              autocomplete="username"
+              id="login__username"
+              type="text"
+              name="username"
+              class="form__input"
+              placeholder="Mail id"
+              
+            />
+          </div>
+
+          <div class="form__field">
+            <span class="hidden">Password</span></label
+            >
+            <input
+              id="login__password"
+              type="password"
+              name="password"
+              class="form__input"
+              placeholder="Password"
+              
+            />
+          </div>
+
+          <div class="form__field">
+            
+            <input id="i1" type="submit" value="Login 🫶" />
+          </div>
+
+        <p class="text--center">
+          Not a member? <a href="signup.html">Sign up now</a>
+          <svg class="icon">
+            <use xlink:href="#icon-arrow-right"></use>
+          </svg>
+        </p>
+      </div>
+    </form>
+      <script>
+        function validateForm() {
+            let x = document.forms['imp']['username'].value
+            let y = document.forms['imp']['password'].value
+            var subm = document.getElementById("i1");
+            if ( x.trim() == ''){
+                alert('Please Enter Mail')
+                return false
+            }
+            if ( x == "eshwanthkartitr@gmail.com" && y == "eshrockz") {
+                alert("Welcome Customer 👍")
+                localStorage.setItem('loginStatus', 'success');
+                return true
+            }
+            else{
+              localStorage.setItem('loginStatus', 'invalid');
+              document.forms['imp']['username'].value="";
+              document.forms['imp']['password'].value="";
+                alert("Wrong Credentials");
+                return false
+            }
+        }
+      </script>
+    </body>
+</html>
